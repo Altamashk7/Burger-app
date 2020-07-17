@@ -5,8 +5,8 @@ import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 const burger = ( props ) => {
     let transformedIngredients = Object.keys( props.ingredients )                       //coverts obejcts into arryas and then i am mapping it for lenght
-        .map( igKey => {
-            return [...Array( props.ingredients[igKey] )].map( ( _, i ) => {
+        .map( igKey => {                                                                   //coming form burgerbuilder
+            return [...Array( props.ingredients[igKey] )].map( ( _, i ) => {                //128 or 129
                 return <BurgerIngredient key={igKey + i} type={igKey} />;
             } );
         } )

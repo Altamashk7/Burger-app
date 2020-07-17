@@ -16,14 +16,14 @@ const buildControls = (props) => (
             <BuildControl 
                 key={ctrl.label} 
                 label={ctrl.label}
-                added={() => props.ingredientAdded(ctrl.type)}
-                removed={() => props.ingredientRemoved(ctrl.type)}
-                disabled={props.disabled[ctrl.type]} />
+                added={() => props.ingredientAdded(ctrl.type)}         //adding 
+                removed={() => props.ingredientRemoved(ctrl.type)}     //removing ingredient
+                disabled={props.disabled[ctrl.type]} />               //disable button if no ingredient is present
         ))}
         <button 
             className={classes.OrderButton}
-            disabled={!props.purchasable}>ORDER NOW</button>
-    </div>
+            disabled={!props.purchasable}>ORDER NOW</button>        
+    </div>               //disable order button if count ingredient is zero
 );
 
 

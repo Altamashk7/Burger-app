@@ -6,12 +6,6 @@ import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 
 
 
-
-
-
-
-
-
 const INGREDIENT_PRICES = {
     salad: 0.5,
     cheese: 0.4,
@@ -27,7 +21,7 @@ class BurgerBuilder extends Component{
             meat: 0
         },
         totalPrice: 4,
-        purchasable: false
+        purchasable: false   //for order button
     }
 
     updatePurchaseState (ingredients) {
@@ -35,7 +29,7 @@ class BurgerBuilder extends Component{
             .map( igKey => {
                 return ingredients[igKey];
             } )
-            .reduce( ( sum, el ) => {
+            .reduce( ( sum, el ) => {                                       //calcuating no of ingredients
                 return sum + el;
             }, 0 );
         this.setState( { purchasable: sum > 0 } );
@@ -52,7 +46,8 @@ class BurgerBuilder extends Component{
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice + priceAddition;
         this.setState( { totalPrice: newPrice, ingredients: updatedIngredients } );
-        this.updatePurchaseState(updatedIngredients);
+        this.updatePurchaseState(updatedIngredients);                              //function calling after ingrdient is added 
+                                                                                //argumrnt helps in updating 135
     }
 
     removeIngredientHandler = ( type ) => {
@@ -69,12 +64,12 @@ class BurgerBuilder extends Component{
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice - priceDeduction;
         this.setState( { totalPrice: newPrice, ingredients: updatedIngredients } );
-        this.updatePurchaseState(updatedIngredients);
+        this.updatePurchaseState(updatedIngredients);   //function calling after ingredient is removed
     }
 
     render () {
         const disabledInfo = {
-            ...this.state.ingredients
+            ...this.state.ingredients               //for disabling ingredient less button
         };
         for ( let key in disabledInfo ) {
             disabledInfo[key] = disabledInfo[key] <= 0

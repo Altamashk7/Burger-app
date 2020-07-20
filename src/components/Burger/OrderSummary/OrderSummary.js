@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 
 
 import Aux from '../../../hoc/Auxi';
@@ -28,3 +28,4 @@ return(
 
 
  }
+  export default ordersummary;

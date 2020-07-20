@@ -22,8 +22,9 @@ const buildControls = (props) => (
         ))}
         <button 
             className={classes.OrderButton}
-            disabled={!props.purchasable}>ORDER NOW</button>        
-    </div>               //disable order button if count ingredient is zero
+            disabled={!props.purchasable}
+            onClick={props.ordered}>ORDER NOW</button>      
+    </div>               //disable order button if count ingredient is zero   // onclick display modal
 );
 
 

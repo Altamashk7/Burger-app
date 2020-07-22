@@ -74,15 +74,17 @@ class BurgerBuilder extends Component{
 
 
     purchaseHandler = () => {
-        this.setState({purchasing: true});
+        this.setState({purchasing: true});     //for displaying modal fired by order button 
     }
 
 
     purchaseCancelHandler = () => {
-        this.setState({purchasing: false});
+        this.setState({purchasing: false});         // for hiding modal fired by clicking backdrop
     }
 
-
+    purchaseContinueHandler = () => {
+        alert('You continue!');                  //ordersumary continue
+    }
 
 
     render () {
@@ -97,9 +99,20 @@ class BurgerBuilder extends Component{
             <Aux>
 
                 <Modal show={this.state.purchasing}  modalClosed={this.purchaseCancelHandler}> 
-                    <OrderSummary ingredients={this.state.ingredients}
+                    <OrderSummary 
+                    ingredients={this.state.ingredients}              
+                    purchaseCancelled={this.purchaseCancelHandler}           
+                    purchaseContinued={this.purchaseContinueHandler}       
+                    price={this.state.totalPrice}
+                   
                    />
                 </Modal>
+
+
+
+
+
+
                 <Burger ingredients={this.state.ingredients} />
                 <BuildControls
                     ingredientAdded={this.addIngredientHandler}
@@ -108,7 +121,8 @@ class BurgerBuilder extends Component{
                     purchasable={this.state.purchasable}
                     ordered={this.purchaseHandler}
                     price={this.state.totalPrice} />
-            </Aux>
+            </Aux>                                    //ordered for order button
+
         );
     }
 }

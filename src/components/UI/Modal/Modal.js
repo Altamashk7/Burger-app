@@ -10,7 +10,7 @@ import classes from './Modal.css';
      <Backdrop show={props.show} clicked={props.modalClosed}/>
 <div className={classes.Modal}
        style={{
-        transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
+        transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',  /*for transation of nav during mobile device8*/
         opacity: props.show ? '1' : '0'
     }}>
 {props.children}

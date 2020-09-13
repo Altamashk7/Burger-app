@@ -45,7 +45,7 @@ class BurgerBuilder extends Component{
         const updatedCount = oldCount + 1;
         const updatedIngredients = {
             ...this.state.ingredients
-        };
+        }; //... is spredad operator for copying 
         updatedIngredients[type] = updatedCount;
         const priceAddition = INGREDIENT_PRICES[type];
         const oldPrice = this.state.totalPrice;

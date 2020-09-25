@@ -40,5 +40,19 @@ The build is minified and the filenames include the hashes.<br />
 
 ## Screenshot
 
+![screenshot1](https://user-images.githubusercontent.com/59890660/94234873-2d2e3880-ff28-11ea-9c9b-a5ddc93afe95.png)
 
-  
+ 
+![image](https://user-images.githubusercontent.com/59890660/94235238-dbd27900-ff28-11ea-9414-a2383ebd3d70.png)
+
+![image](https://user-images.githubusercontent.com/59890660/94235423-29e77c80-ff29-11ea-86d2-726615ce5a00.png)
+
+### Mobile Layout
+![image](https://user-images.githubusercontent.com/59890660/94235570-6b782780-ff29-11ea-9665-2a3d73fe073b.png)
+
+
+![image](https://user-images.githubusercontent.com/59890660/94235796-bf830c00-ff29-11ea-97b0-a15d1eab8eaf.png)
+
+
+## Working on backend part using Google Firebase.
+

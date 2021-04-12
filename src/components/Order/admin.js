@@ -1,6 +1,7 @@
 import React from "react";
 
 import classes from "./Order.css";
+import Button from "../UI/Button/Button";
 
 const order = (props) => {
   const ingredients = [];
@@ -29,7 +30,7 @@ const order = (props) => {
     );
   });
   const orderInfo = props.data.name;
-
+  console.log(props.id);
   return (
     <div className={classes.Order}>
       <p>Customer name: {orderInfo}</p>
@@ -38,6 +39,12 @@ const order = (props) => {
         Price: <strong>INR {Number.parseFloat(props.price).toFixed(2)}</strong>
       </p>
       <p>Status: {props.status}</p>
+      <Button btnType="Danger" clicked={props.handleRemove}>
+        Remove
+      </Button>
+      <Button btnType="Success" clicked={props.handleUpdate}>
+        update
+      </Button>
     </div>
   );
 };

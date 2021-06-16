@@ -46,8 +46,8 @@ class ContactData extends Component {
         value: "",
         validation: {
           required: true,
-          minLength: 5,
-          maxLength: 5,
+          minLength: 6,
+          maxLength: 6,
           isNumeric: true,
         },
         valid: false,
@@ -103,9 +103,8 @@ class ContactData extends Component {
     this.setState({ loading: true });
     const formData = {};
     for (let formElementIdentifier in this.state.orderForm) {
-      formData[formElementIdentifier] = this.state.orderForm[
-        formElementIdentifier
-      ].value;
+      formData[formElementIdentifier] =
+        this.state.orderForm[formElementIdentifier].value;
     }
     const order = {
       ingredients: this.props.ings,
@@ -143,7 +142,8 @@ class ContactData extends Component {
     }
 
     if (rules.isEmail) {
-      const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+      const pattern =
+        /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
       isValid = pattern.test(value) && isValid;
     }
 

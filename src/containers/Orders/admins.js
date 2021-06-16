@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Spinner from "../../components/UI/Spinner/Spinner";
 import Order from "../../components/Order/admin";
 import axios from "../../axios-orders";
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
@@ -40,7 +40,8 @@ class Orders extends Component {
     };
 
     this.handleUpdate = (order) => {
-      console.log(order.price);
+      this.setState({ loading: true });
+
       axios
         .put(`orders/${order.id}.json`, {
           ingredients: order.ingredients,
@@ -86,6 +87,15 @@ class Orders extends Component {
           key={order}
         />
       ));
+    }
+    if (this.state.loading) {
+      orders = (
+        <div>
+          {" "}
+          Updating....
+          <Spinner />
+        </div>
+      );
     }
     return <div>{orders}</div>;
   }
